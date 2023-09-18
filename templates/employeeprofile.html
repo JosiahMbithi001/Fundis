@@ -17,21 +17,22 @@
         <span></span>
     </ul>
     {% endif %}
-    <h2>Your Details:</h2>
-    <span>Employee ID: {{employee.employeeid}}</span>
-    <span>First Name: {{employee.firstname}}</span>
-    <span>Last Name: {{employee.lastname}}</span>
-    <span>Phone Number: {{employee.phonenumber}}</span>
-    <span>Email: {{employee.email}}</span>
-    <span>Profession: {{employee.profession}}</span>
-    <span>Location: {{employee.location}}</span>
+    <h1>Your Details:</h1>
+    <span>Employee ID: {{employee.employeeid}}</span> <br>
+    <span>First Name: {{employee.firstname}}</span> <br>
+    <span>Last Name: {{employee.lastname}}</span> <br>
+    <span>Phone Number: {{employee.phonenumber}}</span> <br>
+    <span>Email: {{employee.email}}</span> <br>
+    <span>Profession: {{employee.profession}}</span> <br>
+    <span>Location: {{employee.location}}</span> <br>
     <button><a href="{% url 'account:update_employee' employee.employeeid %}">Update</a></button>
 
+    <h1>Jobs that you have Applied for</h1>
     {% for application in applications %}
-    <span>Application ID: {{application.application_id}}</span>
-    <span>Application Date: {{application.application_date}}</span>
-    <span>Application Status: {{application.status}}</span>
-    <span>Application Proposal: {{application.proposal}}</span>
+    <span>Application ID: {{application.application_id}}</span> <br>
+    <span>Application Date: {{application.application_date}}</span> <br>
+    <span>Application Status: {{application.status}}</span> <br>
+    <span>Application Proposal: {{application.proposal}}</span> <br>
     <span>Application Estimated Salary: {{application.estimated_salary}}</span>
     <!-- Update Aplication -->
     <form method="POST" action="{% url 'jobs:update_application' application.application_id %}" id="update-form-{{ application.application_id }}">

@@ -10,7 +10,7 @@
 </head>
 <body>
     {% include 'nav.html' %}
-    <h1>Your Are Registered as an employer</h1>
+    <h1>You Are Registered as an employer</h1>
     {% if messages %}
     <ul class="messages">
             <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
@@ -18,29 +18,30 @@
         <span></span>
     </ul>
     {% endif %}
-    <h2>Your Details:</h2>
-    <span>Employer ID: {{employer.employerid}}</span>
-    <span>First Name: {{employer.firstname}}</span>
-    <span>Last Name: {{employer.lastname}}</span>
-    <span>Phone Number: {{employer.phonenumber}}</span>
-    <span>Email: {{employer.email}}</span>
-    <span>Profession: {{employer.profession}}</span>
-    <span>Location: {{employer.location}}</span>
+    <h1>Your Details:</h1>
+    <span>Employer ID: {{employer.employerid}}</span> <br>
+    <span>First Name: {{employer.firstname}}</span> <br>;
+    <span>Last Name: {{employer.lastname}}</span> <br>
+    <span>Phone Number: {{employer.phonenumber}}</span><br>;
+    <span>Email: {{employer.email}}</span> <br>
+    <span>Profession: {{employer.profession}}</span><br>;
+    <span>Location: {{employer.location}}</span> <br>
     <button><a href="{% url 'account:update_employer' 1 %}">Update</a></button>
 
+    <h1>Jobs that you have Posted</h1>
     {% for job in jobs %}
-    <span>job ID: {{job.job_id}}</span> &nbsp;
-    <span>job Title: {{job.job_title}}</span>
-    <span>Job Type: {{job.job_type}}</span>
-    <span>job Status: {{job.job_status}}</span>
-    <span>job Requirements: {{job.requirements}}</span>
-    <span>job Location: {{job.location}}</span>
-    <span>job Description: {{job.description}}</span>
-    <span>job Estimated Salary: {{job.salary}}</span>
-    <button><a href="{% url 'jobs:applications' job.job_id %}">View applications</a></button>
+    <span>Job ID: {{job.job_id}}</span> &nbsp;
+    <span>Job Title: {{job.job_title}}</span> <br>
+    <span>Job Type: {{job.job_type}}</span> <br>;
+    <!-- <span>job Status: {{job.job_status}}</span> <br> -->
+    <span>Job Requirements: {{job.requirements}}</span> <br>
+    <span>Job Location: {{job.location}}</span> <br>
+    <span>Job Description: {{job.description}}</span><br>
+    <span>Job Estimated Salary: {{job.salary}}</span> <br>
+    <button><a href="{% url 'jobs:applications' job.job_id %}">View applications</a></button> <br>;
     <form method="POST" action="{% url 'jobs:update_job' job.job_id %}" >
         {% csrf_token %}
-        <button type="button" ><a href="{% url 'jobs:update_job' job.job_id %}">Update job</a></button>
+        <button type="button" ><a href="{% url 'jobs:update_job' job.job_id %}">Update job</a></button> <br>;
     </form>
     <form method="POST" action="{% url 'jobs:delete_job' job.job_id %}" id="delete-form-{{ job.job_id }}">
         {% csrf_token %}
