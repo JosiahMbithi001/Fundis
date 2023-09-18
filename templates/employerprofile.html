@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" href="{% static 'images/favicon.ico' %}">
+    <link rel="stylesheet" href="{% static 'css/employerprofile.css' %}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fundis</title>
+</head>
+<body>
+    {% include 'nav.html' %}
+    <h1>Your Are Registered as an employer</h1>
+    {% if messages %}
+    <ul class="messages">
+            <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+    {% else %}
+        <span></span>
+    </ul>
+    {% endif %}
+    <h2>Your Details:</h2>
+    <span>Employer ID: {{employer.employerid}}</span>
+    <span>First Name: {{employer.firstname}}</span>
+    <span>Last Name: {{employer.lastname}}</span>
+    <span>Phone Number: {{employer.phonenumber}}</span>
+    <span>Email: {{employer.email}}</span>
+    <span>Profession: {{employer.profession}}</span>
+    <span>Location: {{employer.location}}</span>
+    <button><a href="{% url 'account:update_employer' 1 %}">Update</a></button>
+
+    {% for job in jobs %}
+    <span>job ID: {{job.job_id}}</span> &nbsp;
+    <span>job Title: {{job.job_title}}</span>
+    <span>Job Type: {{job.job_type}}</span>
+    <span>job Status: {{job.job_status}}</span>
+    <span>job Requirements: {{job.requirements}}</span>
+    <span>job Location: {{job.location}}</span>
+    <span>job Description: {{job.description}}</span>
+    <span>job Estimated Salary: {{job.salary}}</span>
+    <button><a href="{% url 'jobs:applications' job.job_id %}">View applications</a></button>
+    <form method="POST" action="{% url 'jobs:update_job' job.job_id %}" >
+        {% csrf_token %}
+        <button type="button" ><a href="{% url 'jobs:update_job' job.job_id %}">Update job</a></button>
+    </form>
+    <form method="POST" action="{% url 'jobs:delete_job' job.job_id %}" id="delete-form-{{ job.job_id }}">
+        {% csrf_token %}
+        <button type="button" onclick="confirmDelete('{{ job.job_id }}')">Delete job</button>
+    </form>
+    {% endfor %}
+
+    <script>
+        function confirmDelete(jobId) {
+            if (confirm("Are you sure you want to delete this job?")) {
+                document.getElementById("delete-form-" + jobId).submit();
+            }
+        }
+    </script>
+</body>
+    {% include 'footer.html' %}
+</html>

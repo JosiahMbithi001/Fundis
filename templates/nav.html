@@ -1,0 +1,22 @@
+<!-- This is the navigation bar for the website -->
+{% load static %}
+<load type="icon" rel="icon" href="{% static 'favicon.ico' %}">
+<link rel="stylesheet" href="{% static 'css/nav.css'  %}">
+<nav class="NavBar">
+    <span class="logo"><a href="{% url 'index'%}">Fundis</a></span>
+    <div class="navlist">
+        <span class="nav-item"><a href="{% url 'index' %}">HOME</a></span>
+        <span class="nav-item"><a href="{% url 'about'%}">ABOUT US</a></span>
+        <span class="nav-item"><a href="/jobs/post_job">POST JOB</a></span>
+        <span class="nav-item"><a href="/jobs">FIND JOB</a></span>
+    </div>
+    <div class="list_A">
+        {% if user.is_authenticated %}
+        <span id="list_item_A_log"><a href="/account/logout">Log out</a></span>
+        <button ><a href="/account/profile">Profile</a></button>
+        {% else %}
+        <span id="list_item_A_log"><a href="/account/login">Log in</a></span>
+        <button ><a href="/account">Sign Up</a></button>
+        {% endif %}
+    </div>
+</nav>

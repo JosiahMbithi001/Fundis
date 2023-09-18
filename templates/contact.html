@@ -1,0 +1,48 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Contact Us - JobKonnect</title>
+  <link rel="stylesheet" href="{% static '/css/index.css' %}">
+  <link rel="stylesheet" href="{% static '/css/contact.css' %}">
+</head>
+<body>
+  <nav class="nav-bar">
+    <span class="logo">JOBKONNECT</span>
+    <ul class="nav-list">
+        <li class="nav-item" ><a href="/">HOME</a></li >
+        <li class="nav-item"><a href="/employer/post_job">POST JOB</a></li >
+        <li class="nav-item"><a href="/employee/">FIND JOB</a></li >
+        <li class="nav-item"><a href="/about/">ABOUT US</a></li >
+        <li class="nav-item"><a href="/contact/">CONTACT US</a></li >
+        <li class="nav-item"><button ><a href="/account/login" class="buttons">LOGIN</a></button></li >
+        <li class="nav-item"><button ><a href="/account/" class="buttons">REGISTER</a></button></li >
+    </ul>
+</nav>
+<div class="container">
+  <section>
+    <h2>Contact Us</h2>
+    <p>
+      We value your feedback and are here to assist you. If you have any questions, suggestions, or concerns, please feel free to reach out to us using the contact details below.
+    </p>
+
+    <h3>Contact Information</h3>
+    <p>
+      Email: <a href="mailto:info@jobkonnect.com">info@jobkonnect.com</a><br>
+      Phone: <a href="tel:+254719728369">+254 719 728 369</a>
+    </p>
+
+    <h3>You can also find us on</h3>
+    <ul class="social-buttons">
+      <li><a href="https://facebook.com/jobkonnectke" target="_blank"><img src="facebook-icon.png" alt="Facebook"></a></li>
+      <li><a href="https://twitter.com/jobkonnectke" target="_blank"><img src="twitter-icon.png" alt="Twitter"></a></li>
+      <li><a href="https://linkedin.com/company/jobkonnectke" target="_blank"><img src="linkedin-icon.png" alt="LinkedIn"></a></li>
+      <li><a href="https://instagram.com/jobkonnectke" target="_blank"><img src="instagram-icon.png" alt="Instagram"></a></li>
+    </ul>
+  </section>
+</div>
+  <footer>
+    <p>&copy; 2023 JobKonnect. All rights reserved. | <a href="{% url 'privacy' %}">Privacy Policy</a> | <a href="{% url 'about' %}">About Us</a> | <a href="{% url 'contact' %}">Contact Us</a> | <a href="{% url 'terms' %}">Terms of service</a></p>
+  </footer> 
+</body>
+</html>

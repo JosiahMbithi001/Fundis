@@ -1,0 +1,25 @@
+{% load static%}
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{% static 'css/authenticate.css'%}">
+    <title>Fundis</title>
+</head>
+<body>
+    {% include 'nav.html' %}
+    <div class="container-1">
+        <h1>WELCOME TO FUNDIS</h1>
+        <div class="container-2">
+            <button><a href="signup/employer" class="box-1">SIGN UP AS AN EMPLOYER</a></button>
+            <button><a href="signup/employee" class="box-2">SIGN UP AS AN EMPLOYEE</a></button>
+        </div>   
+        
+        <div class="container-3">
+            <button><a href="login" class="box-3">LOGIN</a></button>
+        </div>
+    </div>
+</body>
+</html>

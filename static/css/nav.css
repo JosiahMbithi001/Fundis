@@ -1,0 +1,133 @@
+.NavBar {
+    background-color: #000000;
+    color: #ffffff;
+    width: 100%;
+    font-size: 20px;
+    font-weight: bold;
+    padding: 10px;
+    text-align: center;
+    display: flex;
+    justify-content: space-between;
+    height: 50px;
+    line-height: 50px;
+    border-bottom: #ffffff 2px solid;
+}
+a{
+    text-decoration: none;
+    color: #ffffff;
+}
+.logo {
+  text-decoration: none;
+  color: #ffffff;
+  font-size: 30px;
+  font-weight: bold;
+  border: 2px solid orangered;
+}
+.navlist {
+    background-color: #000000;
+    border-radius: 10px;
+    text-decoration: none;
+    color: #ffffff;
+}
+.navlist a {
+    text-decoration: none;
+    color: #ffffff;
+    text-align: center;
+    padding: 10px 20px;
+    font-size: 20px;
+    font-weight: bold;
+    /* border: 1px solid #ffffff; */
+}
+.navlist a:hover {
+    border: 2px solid orangered;
+}
+button a {
+    text-decoration: none;
+    color: #ffffff;
+    text-align: center;
+    font-weight: bold;
+}
+button {
+    background-color: #000000;
+    color: #ffffff;
+    font-size: 20px;
+    font-weight: bold;
+    padding: 10px;
+    text-align: center;
+    border: 2px solid orangered;
+}
+button:hover {
+    color: orangered;
+    border: 2px solid #000000;
+}
+#list_item_A_log a{
+    text-decoration: none;
+    color: orangered;
+    text-align: center;
+    padding: 0 10px;
+    font-size: 25px;
+    font-weight: bold;
+}
+/* Media queries */
+@media screen and (max-width: 768px) {
+    .NavBar {
+      font-size: 16px;
+      margin-left: 2%;
+      margin-right: 2%;
+      height: 40px;
+      line-height: 40px;
+    }
+  
+    .navitem {
+      font-size: 14px;
+      padding: 10px 12px;
+    }
+  }
+  
+@media screen and (max-width: 480px) {
+    .NavBar {
+      font-size: 14px;
+      margin-left: 1%;
+      margin-right: 1%;
+      height: 30px;
+      line-height: 30px;
+    }
+  }
+
+.list_A{
+    list-style-type: none;
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    border-radius: 10px;
+}
+/* Media queries */
+@media screen and (max-width: 768px) {
+  .navitem {
+    font-size: 16px;
+    padding: 10px 12px;
+    color: blue;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .navitem {
+    font-size: 14px;
+    padding: 8px 10px;
+    color: blue;
+  }
+}
+#list_item_A_log:hover{
+    text-decoration: underline;
+}
+
+#list_item_A_sign {
+    padding: 5px 8px;
+    border-radius: 10px;
+    margin-left: 20px;
+}
+#list_item_A_sign:hover {
+    color: #000000;
+    border: 2px solid #000000;
+}

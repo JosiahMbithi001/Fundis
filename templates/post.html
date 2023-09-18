@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Fundis PostJob</title>
+  <link rel="stylesheet" type="text/css" href="../static/css/post.css">
+  <!-- <style>
+    /* Inline CSS */
+    body {
+      margin: 20px;
+    }
+
+    header {
+      background-color: #00bdfe;
+      color: #fff;
+      padding: 20px;
+    }
+
+    h1 {
+      font-size: 24px;
+      margin-bottom: 20px;
+    }
+
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      margin-right: 10px;
+      font-weight: bold;
+    }
+
+    section {
+      background-color: #fff;
+      padding: 20px;
+      margin: 20px;
+    }
+
+    form label {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: bold;
+    }
+
+    form input[type="text"],
+    form input[type="email"],
+    form textarea,
+    form select {
+      width: 100%;
+      padding: 5px;
+      margin-bottom: 10px;
+    }
+
+    form button {
+      padding: 10px 20px;
+      background-color: #00bdfe;
+      color: #fff;
+      border: none;
+      cursor: pointer;
+    }
+
+    footer {
+      background-color: #333;
+      color: #fff;
+      padding: 10px;
+      text-align: center;
+    }
+
+    footer a {
+      color: #fff;
+      text-decoration: none;
+      margin-right: 10px;
+    }
+    #min_salary, max_salary {
+      display: inline-block;
+    }
+  </style> -->
+</head>
+  <body>
+    <!-- <header>
+      <h1>JobKonnect</h1>
+      <nav>
+        <a href="/">Home</a>
+        <a href="/employee/" target="_blank">Find Job</a>
+        <a href="post.html" target="_blank">Post Job</a>
+        <a href="contact.html" target="_blank">Contact Us</a>
+      </nav>
+    </header> -->
+    {% include 'nav.html'%}
+    <section>
+      <h2>Post a Job</h2>
+  
+      <form action="{% url 'jobs:post_job' %}" method="POST">
+        {% csrf_token %}
+        <div class="container_1">
+        <label for="job-title">Job Title:</label>
+        <input type="text" id="job-title" name="job_title" required><br><br>
+  
+        <label for="company-name">Company Name:</label> 
+        <input type="text" id="company-name" name="company-name" placeholder="optional"><br><br>
+
+        <label for="job-type">Job Type:</label>
+        <select id="job-type" name="job_type" required>
+          <option value="full-time">Full-time</option>
+          <option value="part-time">Part-time</option>
+          <option value="contract">Contract</option>
+          <option value="temporary">Temporary</option>
+        </select><br><br>
+  
+  
+        <label for="job-location">Location:</label>
+        <input type="text" id="job-location" name="job_location" required><br><br>
+  
+        <label for="job-description">Job Description:</label><br>
+        <textarea id="job-description" name="description" rows="8" required></textarea><br><br>
+  
+        <label for="job-requirements">Requirements:</label><br>
+        <textarea id="job-requirements" name="requirements" rows="4" required></textarea><br><br>
+  
+        <label for="job-salary-min">Salary</label><br>
+        <input type="text" id="max_salary" name="salary" placeholder="Maximum Salary" required><br><br>
+  
+        <button type="submit">Post Job</button>
+        </div>
+      </form>
+    </section>
+    {% include 'footer.html'%}
+    <!-- <footer>
+      <p>&copy; 2023 JobKonnect. All rights reserved. | <a href="{% url 'privacy' %}">Privacy Policy</a> | <a href="{% url 'about' %}">About Us</a> | <a href="{% url 'contact' %}">Contact Us</a> | <a href="{% url 'terms' %}">Terms of service</a></p>
+    </footer> -->
+  </body>
+</html>
+  

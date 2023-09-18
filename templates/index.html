@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <link type="image" rel="icon" href="{% static 'favicon.ico' %}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link  type="text/css" rel="stylesheet" href="{% static 'css/index.css' %}">
+    <link  type="text/css" rel="stylesheet" href="{% static 'css/nav.css' %}">
+    <title>Fundis</title>
+</head>
+<body>
+    {% include 'nav.html'%}
+     <!-- {% csrf_token % } -->
+        <div class="container-2">
+            <div class="container-3">
+                <div class="text-3A">
+                    <span>Connecting <br> Employers <br> to Genuine <br> Technicians</span>
+                </div>
+            </div>
+            <div class="container-4">
+                <div class="container-5">
+                    <a href="/jobs/post_job">Post Job</a> 
+                    <span>As an Employer 
+    
+                    </span>
+                </div>
+                <br>
+                <div class="container-6">
+                    <a href="/jobs">Find Job</a>
+                    <span>As a Technician <br>
+                         
+                    </span>
+                </div>
+            </div>
+        </div>
+    {% include 'footer.html'%}
+</body>
+</html>

@@ -1,0 +1,1 @@
+web: gunicorn fundis.wsgi --log-file - --log-level debug

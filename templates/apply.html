@@ -1,0 +1,120 @@
+{% extends 'base.html' %}
+{% block body %}
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Job Application - JobKonnect</title>
+  <link rel="stylesheet" type="text/css" href="apply.css">
+  <link rel="stylesheet" type="text/css" href="styles.css">
+  <style>
+    body {
+      margin: 20px;
+    }
+
+    header {
+      background-color: #00bdfe;
+      color: #fff;
+      padding: 20px;
+    }
+
+    h1 {
+      font-size: 24px;
+      margin-bottom: 20px;
+    }
+
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      margin-right: 10px;
+      font-weight: bold;
+    }
+
+    section {
+      background-color: #fff;
+      padding: 20px;
+      margin: 20px;
+    }
+
+    form label {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: bold;
+    }
+
+    form input[type="text"],
+    form input[type="file"],
+    form textarea {
+      width: 100%;
+      padding: 5px;
+      margin-bottom: 10px;
+    }
+
+    form button {
+      padding: 10px 20px;
+      background-color: #00bdfe;
+      color: #fff;
+      border: none;
+      cursor: pointer;
+    }
+
+    footer {
+      background-color: #333;
+      color: #fff;
+      padding: 10px;
+      text-align: center;
+    }
+
+    footer a {
+      color: #fff;
+      text-decoration: none;
+      margin-right: 10px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Welcome to JobKonnect</h1>
+  </header>
+
+  <section>
+    <h2>Job Application</h2>
+
+    <form action="{% url 'apply_job' %}" method="POST">
+      {% csrf_token %}
+      <label for="job-title">Job Title:</label>
+      <input type="text" id="job-title" name="job-title" value="Senior Software Engineer" readonly><br><br>
+      <input type="text" id="job-title" name="job_title" readonly><br><br>
+
+      <label for="resume">Resume:</label>
+      <input type="file" id="resume" name="resume" accept=".pdf,.doc,.docx" required><br><br>
+
+      <label for="cover-letter">Cover Letter:</label><br>
+      <textarea id="cover-letter" name="cover-letter" rows="8" required></textarea><br><br>
+
+      <button type="submit">Submit Application</button>
+    </form>
+  </section>
+
+  <footer>
+    <p>&copy; 2023 JobKonnect. All rights reserved. | <a href="{% url 'privacy' %}">Privacy Policy</a> | <a href="{% url 'contact' %}">Contact Us</a> | <a href="{% url 'contact' %}">Contact Us</a> | <a href="{% url 'terms' %}">Terms of service</a></p>
+  </footer>
+
+  <script>
+    function updateJobTitle() {
+      var jobSelect = document.getElementById("job-select");
+      var jobTitleInput = document.getElementById("job-title");
+
+      // Get the selected job option
+      var selectedOption = jobSelect.options[jobSelect.selectedIndex];
+
+      // Set the value of the job title input field
+      jobTitleInput.value = selectedOption.text;
+    }
+  </script>
+</body>
+</html>
+{% endblock %}
+
+
+

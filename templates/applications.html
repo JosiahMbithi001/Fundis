@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Job Application Details</title>
+</head>
+<body>
+    <h1>Job Application Details</h1>
+    <p><strong>Estimated Salary:</strong> {{ application.estimated_salary }}</p>
+    <p><strong>Status:</strong> {{ application.get_status_display }}</p>
+    <p><strong>Proposal:</strong> {{ application.proposal }}</p>
+    <p><strong>CV Document:</strong> <a href="{{ application.cv.url }}">{{ application.cv.name }}</a></p>
+</body>
+</html>

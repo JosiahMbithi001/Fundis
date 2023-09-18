@@ -1,0 +1,92 @@
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
+<!DOCTYPE html>
+<html>
+<head>
+    <title id="title">JOBKONNECT</title>
+</head>
+<body>
+    <header>
+        <navbar id="nav">
+            <div class="nav">
+               <div class="items">
+                 <a href="" ><h1>JobKonekt</h1></a>
+                </div>
+                <div class ="items">
+                    
+            <b><a href="/">Home</a>
+                <span>&nbsp;</span>
+            </div><div class="items">
+                <a href="/employee">Aplications</a>
+                <span>&nbsp;</span>
+                </div><div class="items">
+                <!-- <a href="employee/<employee_name/aplications">jobs history</a>
+                <span>&nbsp;</span>
+                </div><div class="items"> -->
+                <a href="/employee">Profile</a>
+                <span>&nbsp;</span>
+                </div><div class="items">
+                <a href="/employee">Logout</a>
+                <span>&nbsp;</span>
+                </div><div class="right-items">
+                <a href="/employer/post_job">Post Job</a>
+                <span>&nbsp;</span>
+                </div><div class="right-items">
+               <div class="profile-pic"><a href="" ></a></div>
+                <span>&nbsp;</span>
+                </div><div class="right-items">
+                <div class="notifications"><a href="" class="notifications"></a>
+                </div><div></div>
+            </b>
+            </div>
+            </div>
+            </div>
+        </navbar>
+    </header>
+<div class="heading"><b> List of Your recent posted jobs </b></div>
+    {% if jobs %}
+<div class="job-container">
+    {% for job in jobs %}
+
+    <br>
+    <div class="job">
+        
+        <div class="job-title">
+            <h3> {{job.job_title}}</h3>
+            <div class="job-headings">
+                <span id="job-type">Job Type:{{job.job_type}}</span> &nbsp; &nbsp;
+                <span id="job-location">Job Location: {{job.job_location}}</span>
+                </div>
+                <br>
+                <div class="job-salary">
+                <span class="salary">Max Salary: {{job.max_salary}}</span>
+                <span class="salary">Min Salary: {{job.min_salary}}</span>
+                <span class="job-posted">Job Posted: {{job.Date_posted}}</span>
+                <span id="by">By: {{job.user_id.firstname}}</span>
+            </div>
+        </div>
+        <div class="job-description">
+            <p> {{job.description}}</p>
+        </div>
+        <div class="job-requirements">
+            <p>{{job.requiments}}</p>
+        </div>
+        <div class="job-apply">
+            <button class="applybtn">View Aplications</button><br>
+        </div>
+        <br>
+        
+    </div>
+
+{% endfor %}
+
+    {% else %}
+    <div class="job">
+        <h3> No jobs posted yet <a href="/employer/post_job">Post Job</a></h3>
+    </div>
+    {% endif %}
+
+</div>
+<br>
+<div class="left">Employees near you</div>
+<div class="right">Jobs near you</div>

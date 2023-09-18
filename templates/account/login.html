@@ -1,0 +1,40 @@
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/login.css' %}">
+<link rel="stylesheet" href="{% static 'css/index.css' %}">
+<link rel="stylesheet" href="{% static 'css/footerl.css' %}">
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Login Page</title>
+  </head>
+  <body>
+    {% include 'nav.html'%}
+<div>
+    <main style="margin-top: 3%;">
+      <article class="article">
+        <div class="logged_out_form">
+          <h2 class="hbtn_logo">Fundis login</h2>
+          <form action="" method="post">
+            {% csrf_token %}
+            <div class="field">
+              <label class="control-label" for="user_email">Username</label><br>
+              <input autofocus="autofocus" class="form-control" type="text" name="username" id="user_email" />
+            </div><br>
+            <div class="field">
+              <label class="control-label" for="user_password">Password</label><br>
+              <input autocomplete="off" class="form-control" type="password" name="password" id="user_password" />
+            </div><br>
+            <div class="actions">
+              <input type="submit" name="commit" value="Log in" class="btn btn-primary" data-disable-with="Log in" />
+            </div>
+          </form>
+        <ul id="devise_links" class="gap">
+        <a href=""></a>
+        </ul>
+        </div>
+      </article>
+    </main>
+  </div>
+  {% include 'footer.html'%}
+  </body>
+</html>

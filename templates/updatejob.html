@@ -1,0 +1,45 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Fundis Update Job</title>
+</head>
+<body>
+    {% include 'nav.html' %}
+    <h1>Update Job</h1>
+    <form method="POST" action="{% url 'jobs:update_job' 4 %}">
+        {% csrf_token %}
+        <label for="job_title">Job Title:</label>
+        <input type="text" id="job_title" name="job_title" value="{{ job.job_title }}"><br>
+
+        <label for="job_type">Job Type:</label>
+        <input type="text" id="job_type" name="job_type" value="{{ job.job_type }}"><br>
+
+        <label for="job_status">Job Status:</label>
+        <input type="text" id="job_status" name="job_status" value="{{ job.job_status }}"><br>
+
+        <label for="job_location">Job Location:</label>
+        <input type="text" id="job_location" name="job_location" value="{{ job.job_location }}"><br>
+
+        <label for="description">Description:</label>
+        <textarea id="description" name="description">{{ job.description }}</textarea><br>
+
+        <label for="salary">Salary:</label>
+        <input type="text" id="salary" name="salary" value="{{ job.salary }}"><br>
+
+        <label for="requiments">Requirements:</label>
+        <textarea id="requiments" name="requiments" value="{{ job.requiments}}">{{ job.requirements }}</textarea><br>
+
+        <button type="submit">Update Job</button>
+    </form>
+
+    {% if messages %}
+        <ul>
+            {% for message in messages %}
+                <li>{{ message }}</li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+    {% include 'footer.html' %}
+</body>
+</html>

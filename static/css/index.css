@@ -1,0 +1,240 @@
+/* Container 2 Holds both Container 3 and Container 4 */
+body {
+    background-image: url(../images/jeriden-villegas-VLPUm5wP5Z0-unsplash.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.logo {
+    text-decoration: none;
+    color: #ffffff;
+}
+.container-2{
+    display: flex;
+    justify-content: space-between;
+    width: 90%;
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-top: 5%;
+    height: 75%;
+}
+/* Holds the Connecting... Statement */
+.container-3{
+    margin-right: auto;
+    width: 40%;
+}
+/* Holds the Connecting... Statement Text */
+.text-3A{
+    font-size: 80px;
+    font-weight: bold;
+    color: orangered;
+    margin-top: 8%;
+}
+/* Holds Container 5 and 6 */
+.container-4 {
+    width: 40%;
+    position: relative;
+    margin-left: auto;
+    margin-top: 8%;
+    color: white;
+}
+/* Holds the Employer and Employee Buttons */
+.container-4 a{
+    text-decoration: none;
+    background-color: orangered;
+    color: white;
+}
+.container-4 a:hover{
+    background-color: #ff4500;
+    color: white;
+    border: 2px solid white;
+}
+/* Hold The Employer Div */
+.container-5{
+    position: absolute;
+    width: 100%;
+    height: 50%;
+    top: 0;
+    font-size: 40px;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Holds the Employee Div */
+.container-6{
+    position: absolute;
+    width: 100%;
+    height: 50%;
+    bottom: 0;
+    font-size: 40px;
+    text-align: center;
+}
+/* Holds Footer */
+.footer{
+    background-color: black;
+    color: #ffffff;
+    font-size: 20px;
+    font-weight: bold;
+    padding: 10px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 10px;
+    height: 50px;
+    bottom: 0px;
+    border: 2px solid #ffffff;
+}
+/* Holds the Footer Text */
+.footer-1{
+    color: #ffffff;
+    font-size: 20px;
+    font-weight: bold;
+    padding: 10px;
+    text-align: center;
+    align-items: center;
+    border-radius: 10px;
+    bottom: 0px;
+    height: auto;
+    width: 50%;
+}
+.footer-1 span{
+    padding: 1%;
+    color: #000000;
+}
+.footer a {
+    text-decoration: none;
+    color: #ffffff;
+}
+
+/* .nav-bar {
+    text-decoration: none;
+    padding-left: 20px;
+    padding-right: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-family: 'Roboto', sans-serif;
+    background-color: #00bdfe;
+    color: white;
+    border-bottom: 1px solid white;  
+    margin-top: 0%;
+    height: 150px;
+    font-weight: bold;
+}
+.logo{
+    font-size: 40px;
+    font-weight: bold;
+}
+.nav-list li{
+    list-style: none;
+    display: inline-block;
+    margin-left: 30px; 
+    margin-right: 10px;
+    color: white;
+}
+.nav-item{
+    text-decoration: none;
+    color: white;
+}
+
+button{
+    background-color: blue;
+    border: none;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 10px;
+
+}
+.container-1{
+    max-width: 95%;
+    margin-left: 4%;
+    height: 100vh;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+.container-2{
+    display: flex;
+    justify-content: space-between;
+}
+.title-1{
+    font-size: 40px;
+    font-weight: bold;
+}
+.image-1{
+    width: 600px;
+    height: 400px;
+}
+.container-3{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+    height: 50%;
+}
+.title-2{
+    font-size: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.image-2{
+    margin-left: 5px;
+    width: 600px;
+    height: 400px;
+}
+.image-3{
+    margin-left: 5px;
+    width: 600px;
+    height: 400px;
+}
+a {
+    text-decoration: none;
+    color: white;
+}
+a:hover{
+    color: rgb(82, 76, 76);
+    background-color: white;
+}
+.buttons:hover{
+    cursor: pointer;
+    color: white;
+    background-color: blue;
+    border-radius: 10px;
+}
+#link-1{
+    color: black;
+}
+#link-1:hover{
+    color: grey;
+}
+
+.image-with-text {
+    display: flex;
+    align-items: center;
+}
+
+.image-container {
+    flex: 0 0 50%;
+}
+.image-container img {
+    width: 90%;
+    height: auto;
+    margin-left: 70px;
+    margin-bottom: 50px;
+}
+
+.text-container {
+    flex: 0 0 50%;
+    margin-left: 10px; 
+}
+
+.text-container h2 {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+   
+}
+
+.text-container p {
+    font-size: 16px;
+    line-height: 1.5;
+} */

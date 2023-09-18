@@ -1,0 +1,6 @@
+db.sqlite3
+fundis/__pycache__/
+account/__pycache__/
+account/migrations/
+jobs/__pycache__/
+jobs/migrations/

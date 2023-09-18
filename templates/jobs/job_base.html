@@ -1,0 +1,52 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{% block title %}Bookstore{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+</head>
+
+<body>
+    <div class="body-container">
+    {% block content %}
+    <header>
+        <navbar id="nav">
+            <div class="nav">
+<!--                 <div class="items">
+                 <a href="" ><h1>JobKonekt</h1></a>
+                </div> -->
+                <div class ="items">
+                    
+            <b><a href="/employee">Home</a>
+                <span>&nbsp;</span>
+            </div><div class="items">
+                <a href="/employee">Aplications</a>
+                <span>&nbsp;</span>
+                </div><div class="items">
+                <a href="employee/<employee_name/aplications">jobs history</a>
+                <span>&nbsp;</span>
+                </div><div class="items">
+                <a href="/employee">Profile</a>
+                <span>&nbsp;</span>
+                </div><div class="items">
+                <a href="/employee">Logout</a>
+                <span>&nbsp;</span>
+                </div><div class="right-items">
+               <div class="profile-pic"><a href="" ></a></div>
+                <span>&nbsp;</span>
+                </div><div class="right-items">
+                <div class="notifications"><a href="" class="notifications"></a>
+                </div><div></div>
+            </b>
+            </div>
+            </div>
+            </div>
+        </navbar>
+        <br>
+    </header>
+    <br>
+    {% endblock content %}
+    </div>
+    </body>
+    </html>

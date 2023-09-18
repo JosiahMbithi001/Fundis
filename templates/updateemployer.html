@@ -1,0 +1,39 @@
+<html lang="en">
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" href="{% static 'images/favicon.ico' %}">
+    <link rel="stylesheet" href="{% static 'css/employerprofile.css' %}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fundis</title>
+</head>
+<body>
+    {% include 'nav.html' %}
+    <h1>Your Are Registered as an employer</h1>
+    <h2>Your Details:</h2>
+    <form method="POST" action="{% url 'account:update_employer' employer.employerid %}">
+        {% csrf_token %}
+        <label for="firstname">First Name:</label>
+        <input type="text" id="firstname" name="firstname" value="{{ employer.firstname }}"><br>
+
+        <label for="lastname">Last Name:</label>
+        <input type="text" id="lastname" name="lastname" value="{{ employer.lastname }}"><br>
+
+        <label for="phonenumber">Phone Number:</label>
+        <input type="text" id="phonenumber" name="phonenumber" value="{{ employer.phonenumber }}"><br>
+
+        <label for="email">Email:</label>
+        <input type="text" id="email" name="email" value="{{ employer.email }}"><br>
+
+        <label for="profession">Profession:</label>
+        <input type="text" id="profession" name="profession" value="{{ employer.profession }}"><br>
+
+        <label for="location">Location:</label>
+        <input type="text" id="location" name="location" value="{{ employer.location }}"><br>
+
+
+        <button type="submit">Update</button>
+    </form>
+    {% include 'footer.html' %}
+</body>
+</html>

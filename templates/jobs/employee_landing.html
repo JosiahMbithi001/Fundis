@@ -1,0 +1,128 @@
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
+<!DOCTYPE html>
+<html>
+<head>
+    <title id="title">Fundis</title>
+        <style>
+        .container {
+            display: flex;
+            flex-direction: row;
+            gap: 30px;
+        }
+        
+        .job-container {
+            flex: 1;
+            border-color: orangered;
+            background-color: white;
+        }
+        
+        .apply-container {
+            flex: 1;
+        }
+    </style>
+</head>
+    {% include 'nav.html'%}
+<body>
+     <body>
+    <div class="main-container">
+  <!--      <h1>JobKonekt</h1>
+        <h2>Find your dream job</h2>
+  -->
+        <!-- <form  class="form-search" action="/employee/search" method="GET">
+        <section class="search-bar">
+
+            <div class="location">
+                <b>Search by location</b>
+                <select name="location">
+                    <option value="location">Kimende</option>
+                    <option value="location">Thika</option>
+                    <option value="location">Nakuru</option>
+                    <option value="location">Kisii</option>
+                </select>
+            </div>
+            <div class="job_type">
+                <b>Search by job_type</b>
+                <select>
+                    <option value="job_type">Software Engineering</option>
+                    <option value="job_type">Electrical Engineering</option>
+                    <option value="job_type">Mechanical Engineering</option>
+                    <option value="job_type">Civil Engineering</option>
+                </select>
+            </div>
+            <span>&nbsp;</span><span>&nbsp;</span><span>&nbsp;</span>
+            <div class="search-button">
+                <button class="searchbtn" type="submit">Search</button>
+            </div>
+            
+        </section> -->
+    </form>
+    </div>
+<div class="container">
+
+<div class="job-container">
+    {% for job in jobs %}
+    <br>
+    <div class="job">
+        
+        <div class="job-title">
+            <h3>{{job.job_title}}</h3>
+            <div class="job-headings">
+                <span id="job-type">Job Type:{{job.job_type}}</span> &nbsp; &nbsp;
+                <span id="job-location">Job Location: {{job.job_location}}</span>
+                </div>
+                <br>
+                <div class="job-salary">
+                <span class="salary">Salary: {{job.salary}}</span>
+                <span class="job-posted">Job Posted: {{job.Date_posted}}</span><br>
+                <span id="by">By: {{job.user_id.firstname}}</span>
+            </div>
+        </div>
+        <div class="job-description">
+            <p>Job Description: {{job.description}}</p>
+        </div>
+        <!-- <div class="job-requirements">
+            <p>Job status: {{job.job_status}}</p>
+        </div> -->
+        <div class="job-apply">
+        <button class="applybtn" onclick="showApplyForm('{{job.job_id}}', '{{job.job_title}}')">Apply This Job</button>
+
+        </div>
+        <br>
+        
+    </div>
+
+    {% endfor %}
+    {% include "pagination.html" with page=jobs %}
+    </div>
+            <div class="apply-container" id="applyContainer">
+            <!-- Apply form code here -->
+        </div>
+</div>
+        <script>
+        function showApplyForm(job_id, jobTitle) {
+            document.getElementById('applyContainer').innerHTML = `
+                <section>
+                    <h2>Job Application</h2>
+                    <form action="/jobs/apply_job" method="POST">
+                        {% csrf_token %}
+                        <label for="job-title">Job Title:</label>
+                        <input type="text" id="job-title" name="job-title" value="${jobTitle}" readonly><br><br>
+                        
+                        <label for="resume">Resume:</label>
+                        <input type="file" id="resume" name="cv" accept=".pdf,.doc,.docx" required><br><br>
+                        <label for="cover-letter">Proposal or Cover Letter:</label><br>
+                        <textarea id="cover-letter" name="proposal" rows="8" required></textarea><br><br>
+                        <label for="salary"> Estimated Salary</label>
+                        <input type="text" id="estimated_salary" name="estimated_salary" required><br><br>
+                        <input type="text" id="jobid" name="jobid" value="${job_id}" readonly> <br><br>
+                        <p></p>
+                        <button type="submit">Submit Application</button>
+                    </form>
+                </section>
+            `;
+        }
+    </script>
+</body>
+{% include 'footer.html'%}
+</html>

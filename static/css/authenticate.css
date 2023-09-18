@@ -1,0 +1,52 @@
+body {
+  background-image: url(../images/jeriden-villegas-VLPUm5wP5Z0-unsplash.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+h1{
+  font-size: 40px;
+  font-weight: 600;
+  color: #000;
+  text-align: center;
+  margin-bottom: 20px;
+}
+.container-1 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 40%;
+}
+
+.container-2 {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.container-2 button {
+  margin: 0 10px;
+  padding: 10px 20px;
+  background-color: orangered;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.container-3 {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.container-3 button {
+  padding: 10px 20px;
+  background-color: orangered;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+}
