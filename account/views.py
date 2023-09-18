@@ -11,7 +11,7 @@ from django.http import HttpResponse
 # Create your views here.
 def base(request):
     """
-    This is the landing autentication Page 
+    This is the landing autentication Page
     """
     return render(request, "account/authenticate.html")
 
